@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ef5c1c26.chunk.css",
+    "main.js": "/static/js/main.e12150d5.chunk.js",
+    "main.js.map": "/static/js/main.e12150d5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cf1a3862.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cf1a3862.js.map",
+    "static/css/2.170ca112.chunk.css": "/static/css/2.170ca112.chunk.css",
+    "static/js/2.c4b57e86.chunk.js": "/static/js/2.c4b57e86.chunk.js",
+    "static/js/2.c4b57e86.chunk.js.map": "/static/js/2.c4b57e86.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.170ca112.chunk.css.map": "/static/css/2.170ca112.chunk.css.map",
+    "static/css/main.ef5c1c26.chunk.css.map": "/static/css/main.ef5c1c26.chunk.css.map",
+    "static/js/2.c4b57e86.chunk.js.LICENSE.txt": "/static/js/2.c4b57e86.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/AvertaCyrillicRegular.9cfd0bd4.otf",
+    "static/media/Home.css": "/static/media/Background.fd7e1e9e.png",
+    "static/media/LogoOffers.9010e3b2.svg": "/static/media/LogoOffers.9010e3b2.svg",
+    "static/media/Union.d3bdf3aa.svg": "/static/media/Union.d3bdf3aa.svg",
+    "static/media/checkMark.43360fbc.svg": "/static/media/checkMark.43360fbc.svg",
+    "static/media/chevron-back.26a7db52.svg": "/static/media/chevron-back.26a7db52.svg",
+    "static/media/delimeter.b3e9955e.svg": "/static/media/delimeter.b3e9955e.svg",
+    "static/media/highChance.e6c882fb.svg": "/static/media/highChance.e6c882fb.svg",
+    "static/media/lowChance.00612335.svg": "/static/media/lowChance.00612335.svg",
+    "static/media/middleChance.6e3723cf.svg": "/static/media/middleChance.6e3723cf.svg",
+    "static/media/zaimer.7039308f.svg": "/static/media/zaimer.7039308f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf1a3862.js",
+    "static/css/2.170ca112.chunk.css",
+    "static/js/2.c4b57e86.chunk.js",
+    "static/css/main.ef5c1c26.chunk.css",
+    "static/js/main.e12150d5.chunk.js"
+  ]
+}
