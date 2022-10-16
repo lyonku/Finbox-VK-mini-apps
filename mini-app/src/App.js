@@ -13,18 +13,17 @@ import "@vkontakte/vkui/dist/vkui.css";
 
 import Home from "./panels/Home";
 import Offers from "./panels/Offers";
+import Comments from "./panels/Comments";
+import Rating from "@material-ui/lab/Rating";
 
 const App = () => {
   const [scheme, setScheme] = useState("bright_light");
   const [activePanel, setActivePanel] = useState("home");
-  // const [groups, setGroups] = useState([]);
-  // const [fetchedUser, setUser] = useState(null);
-  // const [popout, setPopout] = useState(null);
-
   const [rngValue, setRngValue] = useState([50000]);
+  const [value, setValue] = useState(2);
 
   const handleSumChange = (rngValue) => {
-    setRngValue(rngValue);
+    setRngValue(+rngValue);
   };
 
   useEffect(() => {
@@ -73,6 +72,9 @@ const App = () => {
                   rngValue={rngValue}
                 />
                 <Offers id="offers" go={go} rngValue={rngValue} />
+                <Comments id="comments" go={go}>
+                  <Rating />
+                </Comments>
               </View>
             </SplitCol>
           </SplitLayout>

@@ -6,8 +6,7 @@ import { Panel, PanelHeader, PanelHeaderBack } from "@vkontakte/vkui";
 import "../panels/Offers.css";
 import Logo from "../img/LogoOffers.svg";
 import Back from "../img/chevron-back.svg";
-import cardLogo from "../img/zaimer.svg";
-import checkMark from "../img/checkMark.svg";
+import cardLogo from "../img/zaimer.png";
 import highChance from "../img/highChance.svg";
 import middleChance from "../img/middleChance.svg";
 import lowChance from "../img/lowChance.svg";
@@ -30,85 +29,59 @@ const Offers = (props) => {
         <div className="title">Доступные предложения</div>
         <div className="blocks">
           <div className="card">
-            <div className="card__logo">
-              <img src={cardLogo} alt="Back" className="card__logo-img" />
+            <div className="block__header">
+              <div className="block__logo">
+                <img src={cardLogo} alt="Back" className="block__logo-img" />
+              </div>
+              <div className="block__chance">
+                <div className="block__chance-total">
+                  <span>Высокий</span>
+                  <div className="block__chance-title">Шанс одобрения</div>
+                </div>
+                <img className="block__chance-img" src={highChance} />
+              </div>
             </div>
-            <div className="card__block">
-              <div className="card__title">Займер</div>
-              <div className="card__interpreter">
-                <img src={checkMark} className="card__interpreter-img" />
-                <span>Есть представитель</span>
-              </div>
-              <div className="card__wrap">
-                <div className="card__sum">
-                  <div className="card__sum-title">Сумма</div>
-                  <div className="card__sum-total">
-                    {props.rngValue.toLocaleString("ru") + " ₽"}
-                  </div>
-                </div>
-                <div className="card__chance">
-                  <div className="card__chance-title">Шанс одобрения</div>
-                  <div className="card__chance-total">
-                    <img className="card__chance-img" src={highChance} />
-                    <span>Высокий</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card__btns">
-                <input
-                  type="button"
-                  value="Получить деньги"
-                  className="card__btns-getMoney"
-                />
-                <input
-                  type="button"
-                  value="12 отзывов"
-                  className="card__btns-reviews"
-                />
-              </div>
+            <div className="block__btns">
+              <input
+                type="button"
+                value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
+                className="block__btns-getMoney"
+              />
+              <input
+                type="button"
+                value="12 отзывов"
+                className="block__btns-reviews"
+                onClick={props.go}
+                data-to="comments"
+              />
             </div>
           </div>
-        </div>
-        <div className="blocks">
           <div className="card">
-            <div className="card__logo">
-              <img src={cardLogo} alt="Back" className="card__logo-img" />
+            <div className="block__header">
+              <div className="block__logo">
+                <img src={cardLogo} alt="Back" className="block__logo-img" />
+              </div>
+              <div className="block__chance">
+                <div className="block__chance-total">
+                  <span>Высокий</span>
+                  <div className="block__chance-title">Шанс одобрения</div>
+                </div>
+                <img className="block__chance-img" src={highChance} />
+              </div>
             </div>
-            <div className="card__block">
-              <div className="card__title">Займер</div>
-              <div className="card__interpreter">
-                <img src={checkMark} className="card__interpreter-img" />
-                <span>Есть представитель</span>
-              </div>
-              <div className="card__wrap">
-                <div className="card__sum">
-                  <div className="card__sum-title">Сумма</div>
-                  <div className="card__sum-total">
-                    {props.rngValue.toLocaleString("ru") + " ₽"}
-                  </div>
-                </div>
-                <div className="card__chance">
-                  <div className="card__chance-title">Шанс одобрения</div>
-                  <div className="card__chance-total">
-                    <img className="card__chance-img" src={lowChance} />
-                    <span>Низкий</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card__btns">
-                <input
-                  type="button"
-                  value="Получить деньги"
-                  className="card__btns-getMoney"
-                />
-                <input
-                  type="button"
-                  value="12 отзывов"
-                  className="card__btns-reviews"
-                />
-              </div>
+            <div className="block__btns">
+              <input
+                type="button"
+                value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
+                className="block__btns-getMoney"
+              />
+              <input
+                type="button"
+                value="12 отзывов"
+                className="block__btns-reviews"
+                onClick={props.go}
+                data-to="comments"
+              />
             </div>
           </div>
         </div>
@@ -124,72 +97,45 @@ const Offers = (props) => {
         <div className="delimeter__text">
           Такие организации не отвечают на отзывы пользователей
         </div>
-        <div className="blocks">
-          <div className="card">
-            <div className="card__logo">
-              <img src={cardLogo} alt="Back" className="card__logo-img" />
-            </div>
-            <div className="card__block">
-              <div className="card__title">Займер</div>
-              <div className="card__interpreter"></div>
-              <div className="card__wrap">
-                <div className="card__sum">
-                  <div className="card__sum-title">Сумма</div>
-                  <div className="card__sum-total">
-                    {props.rngValue.toLocaleString("ru") + " ₽"}
-                  </div>
-                </div>
-                <div className="card__chance">
-                  <div className="card__chance-title">Шанс одобрения</div>
-                  <div className="card__chance-total">
-                    <img className="card__chance-img" src={middleChance} />
-                    <span>Средний</span>
-                  </div>
-                </div>
-              </div>
 
-              <div className="card__btns">
-                <input
-                  type="button"
-                  value="Получить деньги"
-                  className="card__btns-getMoney"
-                />
+        <div className="blocks">
+          <div className="card-withoutMember">
+            <div className="block__header">
+              <div className="block__logo">
+                <img src={cardLogo} alt="Back" className="block__logo-img" />
+              </div>
+              <div className="block__chance">
+                <div className="block__chance-total">
+                  <span>Высокий</span>
+                  <div className="block__chance-title">Шанс одобрения</div>
+                </div>
+                <img className="block__chance-img" src={highChance} />
               </div>
             </div>
+            <input
+              type="button"
+              value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
+              className="block__btns-getMoney"
+            />
           </div>
-        </div>
-        <div className="blocks">
-          <div className="card">
-            <div className="card__logo">
-              <img src={cardLogo} alt="Back" className="card__logo-img" />
-            </div>
-            <div className="card__block">
-              <div className="card__title">Займер</div>
-              <div className="card__interpreter"></div>
-              <div className="card__wrap">
-                <div className="card__sum">
-                  <div className="card__sum-title">Сумма</div>
-                  <div className="card__sum-total">
-                    {props.rngValue.toLocaleString("ru") + " ₽"}
-                  </div>
-                </div>
-                <div className="card__chance">
-                  <div className="card__chance-title">Шанс одобрения</div>
-                  <div className="card__chance-total">
-                    <img className="card__chance-img" src={lowChance} />
-                    <span>Низкий</span>
-                  </div>
-                </div>
+          <div className="card-withoutMember">
+            <div className="block__header">
+              <div className="block__logo">
+                <img src={cardLogo} alt="Back" className="block__logo-img" />
               </div>
-
-              <div className="card__btns">
-                <input
-                  type="button"
-                  value="Получить деньги"
-                  className="card__btns-getMoney"
-                />
+              <div className="block__chance">
+                <div className="block__chance-total">
+                  <span>Высокий</span>
+                  <div className="block__chance-title">Шанс одобрения</div>
+                </div>
+                <img className="block__chance-img" src={highChance} />
               </div>
             </div>
+            <input
+              type="button"
+              value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
+              className="block__btns-getMoney"
+            />
           </div>
         </div>
       </div>

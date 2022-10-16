@@ -6,13 +6,6 @@
 }
 
 @font-face {
-  font-family: "Averta CY Light";
-  src: url("./fonts/AvertaCyrillicLight.otf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
   font-family: "Averta CY";
   src: url("./fonts/AvertaCyrillicBold.otf") format("truetype");
   font-style: normal;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { Range, getTrackBackground } from "react-range";
@@ -8,14 +8,13 @@ import logo from "../img/Logo.png";
 import warning from "../img/Union.svg";
 
 const Home = ({ go, onChange, rngValue }) => {
-  // const [rngValue, setRngValue] = useState([50000]);
-  const handleSumChange = (event) => {
-    onChange(event);
+  const getBackgroundSize = () => {
+    return { backgroundSize: `${(rngValue * 99) / 100000}% 100%` };
   };
 
-  const STEP = 1000;
-  const MIN = 5000;
-  const MAX = 100000;
+  const handleSumChange = (event) => {
+    onChange(event.target.value);
+  };
 
   return (
     <div className="main">
@@ -32,7 +31,18 @@ const Home = ({ go, onChange, rngValue }) => {
             </span>
           </div>
           <div className="block-form__slidecontainer">
-            <Range
+            <input
+              type="range"
+              min="5000"
+              max="100000"
+              step="1000"
+              className="slider"
+              value={rngValue}
+              onChange={handleSumChange}
+              style={getBackgroundSize()}
+            />
+
+            {/* <Range
               values={rngValue}
               step={STEP}
               min={MIN}
@@ -101,7 +111,7 @@ const Home = ({ go, onChange, rngValue }) => {
                   />
                 </div>
               )}
-            />
+            /> */}
           </div>
           <div className="block-form__price-range">
             <span className="price__range-item">от 5 000 ₽</span>

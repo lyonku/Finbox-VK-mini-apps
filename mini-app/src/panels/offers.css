@@ -2,11 +2,34 @@
   background-color: #ffffff;
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f9f9fd;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #37c99da4;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
 .offers__header {
   display: flex;
   flex-direction: row;
   padding: 10px;
   gap: 16px;
+}
+
+.header-Back {
+  cursor: pointer;
+  width: 36px;
+}
+
+.header-logo {
+  width: 100px;
 }
 
 .offers__main {
@@ -33,41 +56,118 @@
 }
 
 .blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card {
   background-color: #ffffff;
   margin: 0;
-  margin-bottom: 6px;
   border: 1px solid #f6f6f8;
   box-shadow: 0px 16px 24px rgba(0, 18, 102, 0.08);
   border-radius: 12px;
   order: 0;
-}
-
-.card {
-  display: flex;
-}
-
-.card__logo {
   padding: 12px;
 }
 
-.card__block {
+.card-withoutMember {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  margin: 0;
+  border: 1px solid #f6f6f8;
+  box-shadow: 0px 16px 24px rgba(0, 18, 102, 0.08);
+  border-radius: 12px;
+  order: 0;
+  padding: 12px;
+}
+
+.card-withoutMember .block__header {
+  margin-bottom: 0;
+}
+
+.block__header {
   width: 100%;
-  padding: 12px 12px 12px 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  margin-right: 32px;
 }
 
-.card__logo-img {
-  width: 36px;
-  border-radius: 100%;
+.block__chance {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
-.card__title {
+.block__chance-img {
+  width: 12px;
+}
+
+.block__chance-total {
   font-family: "Averta CY";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+  text-align: right;
   font-feature-settings: "salt" on;
   color: #141a33;
+}
+
+.block__chance-title {
+  font-family: "Averta CY";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  font-feature-settings: "salt" on;
+  color: #7a7e8f;
+}
+
+.block__logo-img {
+  width: 78px;
+}
+
+.block__btns {
+  display: flex;
+  gap: 6px;
+}
+
+.block__btns-getMoney {
+  cursor: pointer;
+  padding: 0;
+  font-family: "Averta CY";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  font-feature-settings: "salt" on;
+  color: #ffffff;
+  width: 100%;
+  max-width: 156px;
+  height: 40px;
+  background: #37c99e;
+  border-radius: 10px;
+  border: 0;
+}
+
+.block__btns-getMoney:active {
+  background: #3bdbab;
+}
+
+.block__btns-reviews {
+  cursor: pointer;
+  padding: 0;
+  max-width: 156px;
+  width: 100%;
+  height: 40px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  border: 0;
 }
 
 .card__interpreter {
@@ -89,96 +189,6 @@
   line-height: 14px;
   font-feature-settings: "salt" on;
   color: #37c99e;
-}
-
-.card__wrap {
-  width: inherit;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.card__sum-title {
-  font-family: "Averta CY";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  font-feature-settings: "salt" on;
-  color: #7a7e8f;
-}
-
-.card__sum-total {
-  font-family: "Averta CY";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  font-feature-settings: "salt" on;
-  color: #141a33;
-}
-
-.card__chance {
-  border-left: 1px solid #eef0f3;
-  padding-left: 16px;
-  margin-right: 20px;
-}
-
-.card__chance-title {
-  font-family: "Averta CY";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  font-feature-settings: "salt" on;
-  color: #7a7e8f;
-}
-
-.card__chance-total {
-  display: flex;
-  gap: 6px;
-  font-family: "Averta CY";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  font-feature-settings: "salt" on;
-  color: #141a33;
-}
-
-.card__btns {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.card__btns-getMoney {
-  padding: 0;
-  font-family: "Averta CY";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  font-feature-settings: "salt" on;
-  color: #ffffff;
-  width: 100%;
-  max-width: 144px;
-  height: 40px;
-  background: #37c99e;
-  border-radius: 10px;
-  border: 0;
-  margin-right: 6px;
-}
-
-.card__btns-reviews {
-  padding: 0;
-  width: 100%;
-  max-width: 120px;
-  height: 40px;
-  background: #f2f2f2;
-  border-radius: 10px;
-  border: 0;
 }
 
 .delimeter {
@@ -216,4 +226,24 @@
   text-align: center;
   font-feature-settings: "salt" on;
   color: #7a7e8f;
+}
+
+.comments__footer {
+  align-self: end;
+  background-color: #ffffff;
+  padding: 12px 12px 34px 12px;
+}
+
+@media screen and (max-width: 460px) {
+  .card-withoutMember {
+    display: block;
+  }
+
+  .card-withoutMember .block__btns-getMoney {
+    max-width: none;
+  }
+
+  .card-withoutMember .block__header {
+    margin-bottom: 12px;
+  }
 }
