@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.3d71590c.chunk.css",
-    "main.js": "/static/js/main.62bf9ed3.chunk.js",
-    "main.js.map": "/static/js/main.62bf9ed3.chunk.js.map",
+    "main.css": "/static/css/main.616d7af8.chunk.css",
+    "main.js": "/static/js/main.6fb4b00e.chunk.js",
+    "main.js.map": "/static/js/main.6fb4b00e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e777d00d.js",
     "runtime-main.js.map": "/static/js/runtime-main.e777d00d.js.map",
     "static/css/2.7f8f69ed.chunk.css": "/static/css/2.7f8f69ed.chunk.css",
-    "static/js/2.c57ccc32.chunk.js": "/static/js/2.c57ccc32.chunk.js",
-    "static/js/2.c57ccc32.chunk.js.map": "/static/js/2.c57ccc32.chunk.js.map",
+    "static/js/2.a35c5e74.chunk.js": "/static/js/2.a35c5e74.chunk.js",
+    "static/js/2.a35c5e74.chunk.js.map": "/static/js/2.a35c5e74.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.7f8f69ed.chunk.css.map": "/static/css/2.7f8f69ed.chunk.css.map",
-    "static/css/main.3d71590c.chunk.css.map": "/static/css/main.3d71590c.chunk.css.map",
-    "static/js/2.c57ccc32.chunk.js.LICENSE.txt": "/static/js/2.c57ccc32.chunk.js.LICENSE.txt",
+    "static/css/main.616d7af8.chunk.css.map": "/static/css/main.616d7af8.chunk.css.map",
+    "static/js/2.a35c5e74.chunk.js.LICENSE.txt": "/static/js/2.a35c5e74.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/AvertaCyrillicRegular.9cfd0bd4.otf",
     "static/media/Home.css": "/static/media/slider.ad06a9dc.svg",
     "static/media/SmartMoneyInfo.a4001f3d.png": "/static/media/SmartMoneyInfo.a4001f3d.png",
@@ -22,14 +22,14 @@
     "static/media/delimeter.b3e9955e.svg": "/static/media/delimeter.b3e9955e.svg",
     "static/media/firstReview.7ecd3c23.svg": "/static/media/firstReview.7ecd3c23.svg",
     "static/media/highChance.e6c882fb.svg": "/static/media/highChance.e6c882fb.svg",
-    "static/media/memberLogo.139c2992.svg": "/static/media/memberLogo.139c2992.svg",
+    "static/media/verificationStar.43360fbc.svg": "/static/media/verificationStar.43360fbc.svg",
     "static/media/webbankir-logo.320dcf9b.jpg": "/static/media/webbankir-logo.320dcf9b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e777d00d.js",
     "static/css/2.7f8f69ed.chunk.css",
-    "static/js/2.c57ccc32.chunk.js",
-    "static/css/main.3d71590c.chunk.css",
-    "static/js/main.62bf9ed3.chunk.js"
+    "static/js/2.a35c5e74.chunk.js",
+    "static/css/main.616d7af8.chunk.css",
+    "static/js/main.6fb4b00e.chunk.js"
   ]
 }

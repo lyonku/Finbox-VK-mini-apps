@@ -5,5 +5,9 @@
     "mobile": "index.html",
     "mvk": "index.html",
     "web": "index.html"
-  }
+  },
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
 }

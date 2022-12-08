@@ -199,6 +199,11 @@ body::-webkit-scrollbar-track {
 }
 
 .block__btns-reviews {
+  gap: 3px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   padding: 0;
   width: 64px;
@@ -206,6 +211,12 @@ body::-webkit-scrollbar-track {
   background: #f2f2f2;
   border-radius: 10px;
   border: 0;
+  font-family: "Averta CY";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  font-feature-settings: "salt" on;
 }
 
 .card__interpreter {
@@ -272,6 +283,18 @@ body::-webkit-scrollbar-track {
   padding: 12px 12px 34px 12px;
 }
 
+.block__btns-reviews-count {
+  margin-left: 4px;
+  display: none;
+  font-family: "Averta CY";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  font-feature-settings: "salt" on;
+  color: #141a33;
+}
+
 @media screen and (max-width: 460px) {
   .card-withoutMember {
     display: block;
@@ -305,7 +328,11 @@ body::-webkit-scrollbar-track {
   }
 
   .block__btns-reviews {
-    width: 50%;
+    width: 100%;
+  }
+
+  .block__btns-reviews-count {
+    display: block;
   }
 }
 

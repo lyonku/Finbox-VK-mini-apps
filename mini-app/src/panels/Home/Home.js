@@ -2,8 +2,8 @@ import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 
 import "./Home.css";
-import logo from "../../img/SmartMoneyLogo.png";
-import info from "../../img/SmartMoneyInfo.png";
+import logo from "img/SmartMoneyLogo.png";
+import info from "img/SmartMoneyInfo.png";
 
 const Home = ({ go, onChange, rngValue }) => {
   const getBackgroundSize = () => {

@@ -23,6 +23,7 @@
     "eruda-code": "^2.0.0",
     "eruda-dom": "^2.0.0",
     "firebase": "^9.14.0",
+    "plural-ru": "^2.0.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

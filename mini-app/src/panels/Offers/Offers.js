@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-
-import { Panel, PanelHeader, PanelHeaderBack } from "@vkontakte/vkui";
-
 import "./Offers.css";
-import logo from "../../img/SmartMoneyLogo.png";
-import Back from "../../img/chevron-back.svg";
-import cardLogoZaimer from "../../img/zaimer.png";
-import cardLogoMoneyMan from "../../img/moneyman.jpg";
-import cardLogoWebBankir from "../../img/webbankir-logo.jpg";
+import logo from "img/SmartMoneyLogo.png";
+import Back from "img/chevron-back.svg";
 
-import highChance from "../../img/highChance.svg";
-import delimeter from "../../img/delimeter.svg";
+import highChance from "img/highChance.svg";
+import delimeter from "img/delimeter.svg";
+import OffersCard from "components/OffersCard";
 
-const Offers = (props) => {
+const Offers = ({ go, rngValue, groups }) => {
   return (
     <div className="offers">
       <div className="offers__header">
@@ -21,7 +16,7 @@ const Offers = (props) => {
           src={Back}
           alt="Back"
           className="header-Back"
-          onClick={props.go}
+          onClick={go}
           data-to="home"
         />
         <div className="OffersHeader__logo">
@@ -32,117 +27,16 @@ const Offers = (props) => {
       <div className="offers__main">
         <div className="title">Доступные предложения</div>
         <div className="blocks">
-          <div className="card">
-            <div className="block__header">
-              <div className="block__logo">
-                <img
-                  src={cardLogoZaimer}
-                  alt="Back"
-                  className="block__logo-img"
-                />
-              </div>
-              <div className="block__chance">
-                <div className="block__chance-total">
-                  <span>Высокий</span>
-                  <div className="block__chance-title">Шанс одобрения</div>
-                </div>
-                <img className="block__chance-img" src={highChance} />
-              </div>
-            </div>
-            <form
-              action="https://www.zaymer.ru/"
-              className="block__btns"
-              target="_blank"
-            >
-              <input
-                type="submit"
-                value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
-                className="block__btns-getMoney"
+          {groups.map((group, index) => {
+            return (
+              <OffersCard
+                rngValue={rngValue}
+                group={group}
+                go={go}
+                key={group.id}
               />
-              <input
-                type="button"
-                value="3.5"
-                className="block__btns-reviews"
-                id="129542706"
-                onClick={props.go}
-                data-to="comments"
-              />
-            </form>
-          </div>
-          <div className="card">
-            <div className="block__header">
-              <div className="block__logo">
-                <img
-                  src={cardLogoMoneyMan}
-                  alt="Back"
-                  className="block__logo-img"
-                />
-              </div>
-              <div className="block__chance">
-                <div className="block__chance-total">
-                  <span>Высокий</span>
-                  <div className="block__chance-title">Шанс одобрения</div>
-                </div>
-                <img className="block__chance-img" src={highChance} />
-              </div>
-            </div>
-            <form
-              action="https://moneyman.ru/"
-              target="_blank"
-              className="block__btns"
-            >
-              <input
-                type="submit"
-                value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
-                className="block__btns-getMoney"
-              />
-              <input
-                type="button"
-                value="4.2"
-                className="block__btns-reviews"
-                id="55652521"
-                onClick={props.go}
-                data-to="comments"
-              />
-            </form>
-          </div>
-          <div className="card">
-            <div className="block__header">
-              <div className="block__logo">
-                <img
-                  src={cardLogoWebBankir}
-                  alt="Back"
-                  className="block__logo-img"
-                />
-              </div>
-              <div className="block__chance">
-                <div className="block__chance-total">
-                  <span>Высокий</span>
-                  <div className="block__chance-title">Шанс одобрения</div>
-                </div>
-                <img className="block__chance-img" src={highChance} />
-              </div>
-            </div>
-            <form
-              action="https://webbankir.com/"
-              className="block__btns"
-              target="_blank"
-            >
-              <input
-                type="submit"
-                value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
-                className="block__btns-getMoney"
-              />
-              <input
-                type="button"
-                value="4.2"
-                className="block__btns-reviews"
-                id="42172377"
-                onClick={props.go}
-                data-to="comments"
-              />
-            </form>
-          </div>
+            );
+          })}
         </div>
 
         <div className="delimeter">
@@ -161,11 +55,7 @@ const Offers = (props) => {
           <div className="card-withoutMember">
             <div className="block__header">
               <div className="block__logo">
-                <img
-                  src={cardLogoMoneyMan}
-                  alt="Back"
-                  className="block__logo-img"
-                />
+                <img src="" alt="Back" className="block__logo-img" />
               </div>
               <div className="block__chance">
                 <div className="block__chance-total">
@@ -178,32 +68,7 @@ const Offers = (props) => {
             <div className="block__btns">
               <input
                 type="button"
-                value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
-                className="block__btns-getMoney"
-              />
-            </div>
-          </div>
-          <div className="card-withoutMember">
-            <div className="block__header">
-              <div className="block__logo">
-                <img
-                  src={cardLogoMoneyMan}
-                  alt="Back"
-                  className="block__logo-img"
-                />
-              </div>
-              <div className="block__chance">
-                <div className="block__chance-total">
-                  <span>Высокий</span>
-                  <div className="block__chance-title">Шанс одобрения</div>
-                </div>
-                <img className="block__chance-img" src={highChance} />
-              </div>
-            </div>
-            <div className="block__btns">
-              <input
-                type="button"
-                value={"Получить " + props.rngValue.toLocaleString("ru") + " ₽"}
+                value={"Получить " + rngValue.toLocaleString("ru") + " ₽"}
                 className="block__btns-getMoney"
               />
             </div>
