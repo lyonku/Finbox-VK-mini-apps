@@ -30,12 +30,13 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Context } from ".";
 
 const App = () => {
-  // const [activePanel, setActivePanel] = useState("home");
-
   const [rngValue, setRngValue] = useState([50000]);
   const [user, setUser] = useState([]);
   const [currentGroup, setCurrentGroup] = useState(null);
   const [activeOrganization, setActiveOrganization] = useState();
+
+  const [activePanel, setActivePanel] = useState("home"); // Ставим начальную панель
+  const [history, setHistory] = useState(["home"]); // Заносим начальную панель в массив историй.
 
   const [adminInfo, setAdminInfo] = useState({ userRights: false });
 
@@ -96,26 +97,6 @@ const App = () => {
     }
   };
   createRate();
-
-  const [history, setHistory] = useState(["main"]);
-  const activePanel = history[history.length - 1];
-  const isFirst = history.length === 1;
-
-  useEffect(() => {
-    bridge
-      .send("VKWebAppSetSwipeSettings", {
-        history: isFirst,
-      })
-      .then((data) => {
-        if (data.result) {
-          // Настройка применилась
-        }
-      })
-      .catch((error) => {
-        // Ошибка
-        console.log(error);
-      });
-  }, [isFirst]);
 
   // User initialization
   useEffect(() => {
@@ -192,29 +173,40 @@ const App = () => {
     }
   }, [activeOrganization]);
 
-  // Page navigation function
-  // const go = (e) => {
-  //   if (e.target.id) {
-  //     setActiveOrganization(e.target.id);
-  //   }
-
-  //   if (e.currentTarget.dataset.page === "comments") {
-  //     setActiveOrganization(null);
-  //     setCurrentGroup(null);
-  //   }
-  //   if (e.currentTarget.dataset.page === "membership") {
-  //     setActiveOrganization(adminInfo?.chosenGroup.id);
-  //   }
-  //   setActivePanel(e.currentTarget.dataset.to);
-  // };
-
-  const goBack = () => setHistory(history.slice(0, -1));
-  const go = (panel) => {
-    setHistory([...history, panel]);
+  const goBack = () => {
+    if (history.length === 1) {
+      // Если в массиве одно значение:
+      bridge.send("VKWebAppClose", { status: "success" }); // Отправляем bridge на закрытие сервиса.
+    } else if (history.length > 1) {
+      if (history[history.length - 1] === "comments") {
+        setActiveOrganization(null);
+        setCurrentGroup(null);
+      }
+      // Если в массиве больше одного значения:
+      history.pop(); // удаляем последний элемент в массиве.
+      setActivePanel(history[history.length - 1]); // Изменяем массив с иторией и меняем активную панель.
+    }
   };
 
+  function goToPage(name, group) {
+    if (history.length > 1 && history[history.length - 1] == "membership") {
+      setActiveOrganization(adminInfo?.chosenGroup.id);
+    }
+    if (group) {
+      setActiveOrganization(group?.id);
+    }
+    // В качестве аргумента принимаем id панели для перехода
+    window.history.pushState({ panel: name }, name); // Создаём новую запись в истории браузера
+    setActivePanel(name); // Меняем активную панель
+    history.push(name); // Добавляем панель в историю
+  }
+
+  useEffect(() => {
+    window.addEventListener("popstate", () => goBack());
+  }, []);
+
   return (
-    <ConfigProvider isWebView={true}>
+    <ConfigProvider isWebView>
       <AdaptivityProvider>
         <AppRoot>
           <SplitLayout>
@@ -224,45 +216,21 @@ const App = () => {
                 history={history}
                 onSwipeBack={goBack}
               >
-                <Panel id="main">
-                  <PanelHeader>Main</PanelHeader>
-                  <Group>
-                    <div style={{ height: 200 }} />
-                    <CellButton onClick={() => go("profile")}>
-                      profile
-                    </CellButton>
-                    <div style={{ height: 600 }} />
-                  </Group>
-                </Panel>
-                <Panel id="profile">
-                  <PanelHeader>Профиль</PanelHeader>
-                  <Group>
-                    <Placeholder>
-                      Теперь свайпните от левого края направо, чтобы вернуться
-                    </Placeholder>
-                    <Div
-                      style={{ height: 50, background: "#eee" }}
-                      data-vkui-swipe-back={false}
-                    >
-                      Здесь свайпбек отключен
-                    </Div>
-                  </Group>
-                </Panel>
                 <Home
                   id="home"
-                  go={go}
+                  goToPage={goToPage}
                   onChange={handleSumChange}
                   rngValue={rngValue}
                 />
                 <Offers
                   id="offers"
-                  go={go}
+                  goToPage={goToPage}
                   rngValue={rngValue}
                   groups={groups}
                 />
                 <Comments
                   id="comments"
-                  go={go}
+                  goToPage={goToPage}
                   user={user}
                   currentGroup={currentGroup}
                   groups={groups}
@@ -271,7 +239,7 @@ const App = () => {
                 />
                 <Membership
                   id="membership"
-                  go={go}
+                  goToPage={goToPage}
                   setAdminInfo={setAdminInfo}
                   adminInfo={adminInfo}
                 />

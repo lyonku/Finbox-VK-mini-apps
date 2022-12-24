@@ -6,9 +6,9 @@ import Back from "img/chevron-back.svg";
 
 import highChance from "img/highChance.svg";
 import delimeter from "img/delimeter.svg";
-import OffersCard from "components/OffersCard";
+import OffersCard from "panels/Offers/components/OffersCard";
 
-const Offers = ({ go, rngValue, groups }) => {
+const Offers = ({ goToPage, rngValue, groups }) => {
   return (
     <div className="offers">
       <div className="offers__header">
@@ -16,12 +16,12 @@ const Offers = ({ go, rngValue, groups }) => {
           src={Back}
           alt="Back"
           className="header-Back"
-          onClick={go}
+          onClick={() => window.history.back()}
           data-to="home"
         />
         <div className="OffersHeader__logo">
           <img src={logo} className="OffersHeader__logo-img" />
-          <div className="OffersHeader__logo-text">Умные деньги</div>
+          <div className="OffersHeader__logo-text">Умные займы</div>
         </div>
       </div>
       <div className="offers__main">
@@ -32,7 +32,7 @@ const Offers = ({ go, rngValue, groups }) => {
               <OffersCard
                 rngValue={rngValue}
                 group={group}
-                go={go}
+                goToPage={goToPage}
                 key={group.id}
               />
             );
@@ -81,7 +81,7 @@ const Offers = ({ go, rngValue, groups }) => {
 
 Offers.propTypes = {
   id: PropTypes.string.isRequired,
-  go: PropTypes.func.isRequired,
+  goToPage: PropTypes.func.isRequired,
 };
 
 export default Offers;
