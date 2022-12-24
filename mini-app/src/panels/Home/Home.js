@@ -5,7 +5,7 @@ import "./Home.css";
 import logo from "img/SmartMoneyLogo.png";
 import info from "img/SmartMoneyInfo.png";
 
-const Home = ({ go, onChange, rngValue }) => {
+const Home = ({ goToPage, onChange, rngValue }) => {
   const getBackgroundSize = () => {
     return { backgroundSize: `${(rngValue * 99) / 100000}% 100%` };
   };
@@ -19,7 +19,7 @@ const Home = ({ go, onChange, rngValue }) => {
       <div className="header">
         <div className="header__logo">
           <img src={logo} className="header__logo-img" />
-          <div className="header__logo-text">Умные деньги</div>
+          <div className="header__logo-text">Умные займы</div>
         </div>
         <div className="header__content">Бесплатный подбор займов</div>
       </div>
@@ -52,8 +52,7 @@ const Home = ({ go, onChange, rngValue }) => {
             type="submit"
             value="Подобрать займ"
             className="block-form__button"
-            onClick={go}
-            data-to="offers"
+            onClick={() => goToPage("offers")}
           />
         </form>
       </div>
@@ -62,11 +61,14 @@ const Home = ({ go, onChange, rngValue }) => {
         <div className="block__info">
           <img src={info} className="block__info-img" />
           <div className="block__info-text">
-            Умные деньги позволяют получить займ и оценить качество работы
+            Умные займы позволяют получить займ и оценить качество работы
             МФО и МКК
           </div>
         </div>
-        <div onClick={go} data-to="membership" className="block-membership">
+        <div
+          onClick={() => goToPage("membership")}
+          className="block-membership"
+        >
           Я – представитель МФО/МКК
         </div>
       </div>

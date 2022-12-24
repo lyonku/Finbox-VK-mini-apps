@@ -114,6 +114,10 @@
   color: #ffffff;
 }
 
+.membership__footer-btn:active {
+  background: #3bdbab;
+}
+
 .membership__footer-text {
   padding: 0 10px;
   text-align: center;
